@@ -1,9 +1,9 @@
-import { AppBar, IconButton, Typography, Toolbar, Grid } from "@mui/material";
-import { MenuOutlined, LogoutOutlined } from "@mui/icons-material";
+import { AppBar, IconButton, Toolbar, Typography, Grid } from "@mui/material"
+import { MenuOutlined, LogoutOutlined } from '@mui/icons-material';
 import { useDispatch } from "react-redux";
 import { startLogout } from "../../store/auth";
 
-export const Navbar = ({drawerWidth}) => {
+export const Navbar = ({drawerWidth, handleDrawerToggle}) => {
 
     const dispatch = useDispatch();
     const handleLogout = () => {
@@ -11,21 +11,23 @@ export const Navbar = ({drawerWidth}) => {
     }
 
     return (
-        <AppBar 
-            position='fixed'
-            className='animate__animated animate__fadeIn'
-            sx={{ 
-                width: {sm: `calc(100% - ${drawerWidth}px)`}, 
-                ml: {sm: `${drawerWidth}px`}
-            }}>
+        <AppBar
+            position="fixed"
+            sx={{
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            ml: { sm: `${drawerWidth}px` },
+            }}
+        >
             <Toolbar>
                 <IconButton
-                    color='inherit'
+                    color="inherit"
+                    aria-label="open drawer"
                     edge="start"
-                    sx={{ mr: 2, display: {sm: 'none'} }}>
+                    onClick={handleDrawerToggle}
+                    sx={{ mr: 2, display: { sm: 'none' } }}
+                >
                     <MenuOutlined />
                 </IconButton>
-
                 <Grid container direction='row' justifyContent='space-between' alignItems='center'>
                     <Typography variant='h6' noWrap component='div'>Journal App</Typography>
                     <IconButton

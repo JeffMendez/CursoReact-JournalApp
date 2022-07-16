@@ -10,8 +10,9 @@ export const startNewNote = () => {
         const { uid } = getState().auth;
 
         const newNote = {
-            title: '',
+            title: 'Sin título',
             body: '',
+            imageUrls: [],
             date: new Date().getTime()
         }
 

@@ -14,12 +14,12 @@ export const ImageGallery = ({images}) => {
   if (!images) return;
 
   return (
-    <ImageList sx={{ width: '100%', height: 500 }} cols={3} rowHeight={200}>
+    <ImageList sx={{ width: '100%', height: 'auto' }} cols={2} rowHeight={300}>
       {images.map((image) => (
         <ImageListItem key={image}>
           <img
-            src={`${image}?w=164&h=164&fit=crop&auto=format`}
-            srcSet={`${image}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+            src={`${image}?w=300&h=300&fit=crop&auto=format`}
+            srcSet={`${image}?w=300&h=300&fit=crop&auto=format&dpr=2 2x`}
             alt='Imagen nota'
             loading="lazy"
           />

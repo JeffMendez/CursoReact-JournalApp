@@ -81,6 +81,7 @@ export const LoginPage = () => {
                             variant='contained' 
                             fullWidth onClick={handleGoogleSignIn}
                             disabled={isAuthenticating}
+                            aria-label='btn-google'
                             >
                             <Google />
                             <Typography sx={{ ml: 1 }}>Google</Typography>
